@@ -1,0 +1,94 @@
+MAPA HÁPTICO – KIOSCO (demo)
+============================
+
+1. Abre mapa_haptico.html en Chrome o Edge (doble clic).
+2. Deja los .mp4 en:
+     videos/ruta/          (Modo Ruta)
+     videos/descripcion/   (Modo Descripción)
+   Los nombres exactos están en el LEEME.txt de cada carpeta.
+3. Recarga la página (F5). No hay que tocar nada más.
+
+Tecla T = panel de pruebas (qué videos encontró, voz, repetir/pausar/detener).
+
+UN SOLO VIDEO PARA TODO (demostración)
+  Si pones UN mp4 en  videos/demo.mp4  se usa en cualquier destino al que le falte su
+  mp4 propio (en Ruta y en Descripción). En ese caso:
+    - el video va silenciado y la voz del navegador lee el guion de ese destino
+      (el audio de un video genérico no diría lo correcto),
+    - ya no aparece el aviso "video LSC no disponible",
+    - el título sobre el video dice "video de demostración".
+  Si existe el mp4 propio de un destino, siempre manda ese (con su audio).
+  Para desactivarlo: casilla del panel de pruebas (tecla T) o videoDemo: null en CONFIG.
+  Si quieres que el demo suene con su propio audio: demoLeeGuion: false en CONFIG.
+
+RUTAS SIMULADAS (solo para la demostración)
+  Los 15 destinos tienen indicaciones de ruta simuladas (el baño, una por piso).
+  Se deducen del plano con iconos (supuestos: "de frente" es hacia arriba en el plano, el kiosco mira al edificio
+  con Recepción a la derecha y el parqueadero atrás, y la escalera sube hacia el norte). NO son exactas ni están validadas:
+  la pantalla muestra "Ruta de demostración (simulada)" y la voz lo dice al empezar.
+  Bodega DPT no tiene puerta al pasillo: se entra por Producción, en la esquina noroeste.
+  Las de piso 2 avisan que el recorrido usa escalera y que la ruta accesible no está definida.
+  Para sustituirlas por rutas reales: editar el bloque JSON dentro del HTML
+  (routeStatus: "validated" y routeSteps con los pasos verificados; el baño usa routeStepsByFloor).
+
+VOZ Y VELOCIDAD (nuevo)
+  Abajo, bajo la leyenda, hay un selector: "Voz  1 · 2 · 3 · 4" y "Velocidad  − 0,9× +".
+  - El navegador solo ofrece las voces instaladas en ESE equipo. El mapa las ordena por claridad
+    y muestra únicamente las 4 mejores en español (primero es-CO, luego es-419, es-MX, es-US, es-ES).
+    Descarta las robóticas (eSpeak, etc.) y las de otros idiomas.
+  - Las más claras son las "Natural" de Microsoft Edge (p. ej. Salome y Gonzalo de Colombia, Dalia y Jorge de
+    México): suenan mucho mejor, pero necesitan internet. Usa Edge para la demostración si puedes.
+    En Chrome salen las "Google español"; en Mac/iPhone, las voces mejoradas de Apple.
+  - Al elegir una voz o cambiar la velocidad se oye una muestra. Si estás escuchando una ruta y cambias la voz,
+    se repite desde el inicio con la voz nueva.
+  - Velocidad inicial 0,9× (un poco más lenta que lo normal); rango 0,7 – 1,2.
+  - La lectura va frase por frase, con una pausa corta entre frases (se entiende mejor).
+  - Se recuerdan la voz y la velocidad en ese navegador.
+  - Para ocultar el selector en el kiosco final: mostrarControlVoz: false en CONFIG.
+  - Solución definitiva: grabar el audio dentro de cada mp4 (con una voz profesional o sintética de calidad);
+    entonces el navegador ya no habla y estas voces dejan de importar.
+
+ESTÁS AQUÍ (orientación del cuerpo)
+  Al pulsar «Estás aquí» (el círculo y el pin de la leyenda) se muestra y se lee:
+  "Estás aquí. El kiosco está ubicado de frente al edificio. A tu derecha está Recepción.
+   Detrás de ti está el parqueadero. Y de frente tienes el pasillo central."
+  VIDEO LSC: deja el mp4 en  videos/estas_aqui.mp4  (junto a las carpetas ruta/ y descripcion/).
+    - Si existe, se reproduce con su propio audio.
+    - Si no existe pero hay videos/demo.mp4, se usa ese (silenciado) y la voz lee el texto.
+    - Si no hay ninguno, se lee el texto y se avisa que el video LSC no está disponible.
+    El panel de pruebas (tecla T) muestra si encontró videos/estas_aqui.mp4.
+  El texto está en el bloque JSON del HTML (globalScripts.youAreHere) y se puede editar.
+
+ORTOGRAFÍA DEL MAPA
+  Al construir el HTML se corrigieron los textos del SVG: Communications Room, Management Office,
+  Dining Room y "Sala de Reuniones". El archivo .svg original no se modificó: corrígelo también allí.
+
+SIN NFC
+  Esta versión usa el mapa nuevo (DISEÑO MAPA PROYECTO CADA DADO FINAL) y ya no tiene NFC.
+  Todo lo demás se mantiene (modos, 15 destinos, rutas simuladas, video de respaldo).
+
+AJUSTES Y CONVERSACIÓN (nuevo: para co-diseñar la comprobación con el grupo)
+  La idea no es un cuestionario: es una conversación abierta, y que la herramienta se adapte a lo que se acuerde.
+  Botón «Ajustes» (esquina) abre un panel que se puede mover de lado con «↔ Mover» para no tapar el video.
+  - Cómo se ve: tamaño del texto (A / A+ / A++; con letra grande la tarjeta se desplaza en vez de encoger),
+    alto contraste, reducir movimiento y destellos, mostrar u ocultar el texto sobre el video.
+  - Cómo se escucha: leer frase por frase, pausa entre frases, y «Paso a paso»: la lectura espera el botón
+    «Siguiente» (o «Repetir frase») entre frases. El paso a paso solo actúa con la voz del navegador y
+    cuando el texto tiene 3 frases o más.
+  - Cuaderno de la conversación: botones «Me gustó», «Me confundí», «Idea» y una nota libre. Cada nota guarda la
+    hora y lo que estaba en pantalla. Se descargan como .md.
+  - Registro de uso (opcional): empieza SIEMPRE apagado y solo lo enciende la persona que dirige la sesión.
+    Se descarga como .csv. Un protocolo cargado desde archivo nunca puede encenderlo.
+  - Todo se guarda solo en ese navegador. No se envía nada a ningún sitio.
+  - «Restablecer» deja todo como al inicio.
+  PROTOCOLO (.json): se carga desde el mismo panel. Define una lista de actividades abiertas (explorar con libertad,
+  ¿dónde estás?, llegar a un lugar, conocer un espacio, ajustar la herramienta, conversación libre), cada una con
+  preguntas para conversar, y puede dejar la herramienta ya configurada (ajustesIniciales: tamaño, contraste, paso a paso...).
+  En protocolo_ejemplo.json está el borrador (v0.1) para editarlo entre todas las personas; los ajustes que acepta
+  son una lista cerrada, así que un archivo no puede cambiar nada fuera de eso.
+
+Formato recomendado de los videos: MP4 con H.264 (video) y AAC (audio).
+Si el audio va dentro del mp4, no hay que configurar nada.
+Si tus videos LSC van sin audio y quieres que se lea el guion con la voz del
+navegador, marca la casilla "Leer el guion con la voz del navegador" del panel
+de pruebas (o pon vozSobreVideo: true en CONFIG, al inicio del script).

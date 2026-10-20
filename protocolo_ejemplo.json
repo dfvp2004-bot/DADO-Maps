@@ -1,0 +1,48 @@
+{
+  "nombre": "Conversación abierta (borrador para co-diseñar)",
+  "version": "0.1",
+  "estado": "borrador",
+  "intro": "Este protocolo es solo un punto de partida. Podemos cambiar, quitar o añadir actividades, y también cómo se ve y se escucha la herramienta, según lo que acordemos juntas y juntos.",
+  "ajustesIniciales": {},
+  "actividades": [
+    {
+      "id": "a1",
+      "titulo": "Explorar con libertad",
+      "descripcion": "Mira el mapa y pulsa lo que quieras, sin ningún objetivo. No hay respuestas correctas ni incorrectas.",
+      "conversar": ["¿Qué esperabas que pasara al pulsar?", "¿Qué te llamó la atención primero?"]
+    },
+    {
+      "id": "a2",
+      "titulo": "¿Dónde estás?",
+      "descripcion": "Pulsa «Estás aquí» y escucha o mira la orientación del kiosco.",
+      "sugerencia": { "estasAqui": true },
+      "conversar": ["¿Pudiste imaginarte dónde está el kiosco?", "¿Qué palabras o frases te ayudaron? ¿Cuáles te confundieron?"]
+    },
+    {
+      "id": "a3",
+      "titulo": "Llegar a un lugar",
+      "descripcion": "En Modo Ruta, elige un destino y sigue las indicaciones como si fueras a caminarlas.",
+      "sugerencia": { "modo": "route", "destino": "5" },
+      "conversar": ["¿El ritmo y la cantidad de información fueron cómodos?", "¿Prefieres escuchar todo seguido o paso a paso?", "¿Entendiste «a tu izquierda», «de frente»? ¿Te servirían otras referencias (puertas, escalera, olores, sonidos)?"]
+    },
+    {
+      "id": "a4",
+      "titulo": "Conocer un espacio",
+      "descripcion": "En Modo Descripción, elige un espacio y escucha qué se hace allí.",
+      "sugerencia": { "modo": "description", "destino": "7" },
+      "conversar": ["¿Qué te gustaría saber de un lugar antes de llegar?", "¿Algo te pareció demasiado largo, ruidoso o brillante?"]
+    },
+    {
+      "id": "a5",
+      "titulo": "Ajustar la herramienta",
+      "descripcion": "Prueba las voces, la velocidad, el tamaño de letra, el contraste y el paso a paso. Deja lo que te resulte cómodo.",
+      "conversar": ["¿Qué cambiarías para que sea más cómodo para ti?", "¿Qué ajuste falta?"]
+    },
+    {
+      "id": "a6",
+      "titulo": "Conversación libre",
+      "descripcion": "Ideas, dudas y cosas que faltan. Aquí podemos redefinir juntas y juntos este protocolo.",
+      "conversar": ["¿Qué debería preguntarse o medirse para que esta prueba sea útil y respetuosa?", "¿Quién más debería participar en el diseño?", "¿Cómo prefieres dar tu opinión: hablando, escribiendo, dibujando…?"]
+    }
+  ]
+}

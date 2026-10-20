@@ -1,0 +1,23 @@
+VIDEOS DEL MODO DESCRIPCIÓN
+========================================
+
+Deja aquí los .mp4 con EXACTAMENTE estos nombres (el HTML los encuentra solo):
+
+  01_recepcion.mp4                             Recepción
+  02_produccion.mp4                            Producción
+  03_impresion_uv.mp4                          Impresión UV
+  04_bodega_dpt.mp4                            Bodega DPT
+  05_bodega_editorial.mp4                      Bodega Editorial
+  06_diseno_dpt.mp4                            Diseño DPT
+  07_editorial_sensorial.mp4                   Editorial Sensorial
+  08_comunicaciones.mp4                        Comunicaciones
+  09_administracion_y_contabilidad.mp4         Administración y Contabilidad
+  10_gerencia.mp4                              Gerencia
+  11_comedor.mp4                               Comedor
+  12_bano.mp4                                  Baño
+  13_cocina.mp4                                Cocina
+  14_sala_de_reuniones.mp4                     Sala de reuniones
+  15_parqueadero.mp4                           Parqueadero
+
+No tienes que tener todos: lo que falte se muestra con texto y voz.
+Para comprobar cuáles detecta: abre mapa_haptico.html y pulsa la tecla T.
